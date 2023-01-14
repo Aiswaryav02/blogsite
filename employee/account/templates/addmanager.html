@@ -1,0 +1,45 @@
+{% extends 'index.html'%}
+{% load static%}
+{% block index%}
+<h3 class="bg-success text-center">Add Manager</h3>
+<form action="" method="post" enctype="multipart/form-data" class="text-center">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        <div class="card container-fluid" style="width:500px">
+          <img class="card-img-top" width="350px" src="{% static 'image\propic.png' %}" alt="Card image">
+            <div class="card-body">
+              <div class="fieldWrapper">
+              {{ form.pic.errors }}
+              <label for="{{form.pic.id_for_label}}">Enter Your Profile Picture</label>
+             {{form.pic}}
+              </div>
+         </div> 
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="fieldWrapper">
+        {{ form.first_name.errors }}
+        <label for="{{form.first_name.id_for_label}}">Enter Your First Name</label>
+         {{form.first_name}}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.last_name.errors }}
+        <label for="{{form.last_name.id_for_label}}">Enter Your Last Name</label>
+         {{form.last_name}}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.email.errors }}
+        <label for="{{form.email.id_for_label}}">Enter Your Email</label>
+         {{form.email}}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.phone.errors }}
+        <label for="{{form.phone.id_for_label}}">Enter Your Phone Number</label>
+         {{form.phone}}
+      </div>
+      <button class="btn btn-info">ADD</button>
+    </div> 
+  </div>      
+</form>
+{%endblock index%}

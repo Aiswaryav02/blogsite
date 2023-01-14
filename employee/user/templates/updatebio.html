@@ -1,0 +1,11 @@
+{% extends 'home2.html'%}
+{%block user%}
+<h3 class="bg-warning text-center text-dark"> Update Bio</h3>
+<form action="" method="post" >
+    {% csrf_token %}
+    <table class="table tale-dark">
+        {{form.as_table}}
+    </table>
+    <button class="btn btn-warning">Update</button>
+</form>
+{%endblock user%}
